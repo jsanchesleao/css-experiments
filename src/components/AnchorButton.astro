@@ -1,0 +1,22 @@
+---
+const { href, className } = Astro.props;
+---
+
+<a class={className} href={href}><slot /></a>
+<style>
+    @layer blocks {
+        a {
+            color: var(--clr-secondary);
+            background-color: var(--clr-primary-darker);
+            border: 1px solid var(--clr-primary-darker);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--space-xs);
+            transition: background-color 0.3s;
+            &:hover {
+                background-color: var(--clr-primary);
+                border: 1px solid var(--clr-primary-darker);
+                text-decoration: none;
+            }
+        }
+    }
+</style>

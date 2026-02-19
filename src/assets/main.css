@@ -1,0 +1,254 @@
+@font-face {
+    font-family: "Jef";
+    size-adjust: 180%;
+    src: url("./JefWriting-Regular.ttf");
+}
+
+@layer base {
+    :root {
+        --clr-primary-light: oklch(85% 10% 210deg);
+        --clr-primary: oklch(50% 65% 210deg);
+        --clr-primary-dark: oklch(25% 65% 210deg);
+        --clr-primary-darker: oklch(10% 65% 210deg);
+
+        --clr-secondary-light: oklch(90% 5% 77deg);
+        --clr-secondary: oklch(80% 5% 77deg);
+        --clr-secondary-dark: oklch(70% 5% 77deg);
+
+        --clr-neutral-light: oklch(81% 13% 76deg);
+        --clr-neutral: oklch(31% 3% 76deg);
+        --clr-neutral-dark: oklch(21% 3% 76deg);
+
+        --clr-accent-light: oklch(74% 34% 281deg);
+        --clr-accent: oklch(54% 54% 281deg);
+        --clr-accent-dark: oklch(34% 34% 281deg);
+
+        --font-main: "Vend Sans", sans-serif;
+        --font-alt: "Jef", sans-serif;
+        --fw-light: 300;
+        --fw-normal: 400;
+        --fw-bold: 500;
+        --fw-black: 700;
+
+        --font-size-xs: 0.75rem;
+        --font-size-sm: 0.875rem;
+        --font-size-md: 1rem;
+        --font-size-lg: 1.25rem;
+        --font-size-xl: 2rem;
+
+        --space-xl: 6rem;
+        --space-lg: 4rem;
+        --space-md: 2rem;
+        --space-sm: 1.5rem;
+        --space-xs: 1rem;
+        --space-xxs: 0.5rem;
+
+        --size-xs: 4rem;
+        --size-sm: 6rem;
+        --size-md: 10rem;
+        --size-lg: 14rem;
+        --size-xl: 20rem;
+        --size-xxl: 40rem;
+    }
+
+    body {
+        background-color: var(--clr-secondary-light);
+        color: var(--clr-neutral);
+        font-family: var(--font-main);
+        font-weight: var(--fw-normal);
+    }
+
+    a {
+        color: var(--clr-accent);
+        text-decoration: none;
+        &:visited {
+            color: var(--clr-accent-dark);
+        }
+        &:hover {
+            color: var(--clr-accent-dark);
+            text-decoration: underline;
+        }
+    }
+
+    h1 {
+        font-weight: var(--fw-black);
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: var(--fw-black);
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        font-weight: var(--fw-bold);
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    header,
+    ul,
+    li,
+    img,
+    a,
+    p,
+    main,
+    footer {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style: none;
+    }
+}
+
+@layer composition {
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-md);
+        align-items: center;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .justify-center {
+        justify-content: center;
+    }
+
+    .columns-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .container {
+        > * {
+            max-width: min(1210px, 100vw);
+            margin-inline: auto;
+        }
+    }
+
+    .container-small {
+        > * {
+            max-width: 980px;
+            margin-inline: auto;
+        }
+    }
+}
+
+@layer utilities {
+    .bg-primary-light {
+        background-color: var(--clr-primary-light);
+    }
+    .bg-primary {
+        background-color: var(--clr-primary);
+    }
+    .bg-primary-dark {
+        background-color: var(--clr-primary-dark);
+        color: var(--clr-neutral-light);
+    }
+    .bg-primary-darker {
+        background-color: var(--clr-primary-darker);
+        color: var(--clr-neutral-light);
+    }
+
+    .bg-secondary-light {
+        background-color: var(--clr-secondary-light);
+    }
+    .bg-secondary {
+        background-color: var(--clr-secondary);
+    }
+    .bg-secondary-dark {
+        background-color: var(--clr-secondary-dark);
+    }
+
+    /* paddings */
+    .padding-inline-sm {
+        padding-inline: var(--space-sm);
+    }
+    .padding-block-sm {
+        padding-block: var(--space-sm);
+    }
+    .padding-sm {
+        padding: var(--space-sm);
+    }
+    .padding-inline-md {
+        padding-inline: var(--space-md);
+    }
+    .padding-block-md {
+        padding-block: var(--space-md);
+    }
+    .padding-md {
+        padding: var(--space-md);
+    }
+
+    /* font colors */
+    .text-neutral-light {
+        color: var(--clr-neutral-light);
+    }
+    .text-neutral {
+        color: var(--clr-neutral);
+    }
+    .text-neutral-dark {
+        color: var(--clr-neutral-dark);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+    .text-align-end {
+        text-align: end;
+    }
+    .text-alt {
+        font-family: var(--font-alt);
+        filter: url(#filter-thicken);
+    }
+
+    /* font sizes */
+    .text-xs {
+        font-size: var(--font-size-xs);
+    }
+    .text-sm {
+        font-size: var(--font-size-sm);
+    }
+    .text-lg {
+        font-size: var(--font-size-lg);
+    }
+    .text-xl {
+        font-size: var(--font-size-xl);
+    }
+
+    /* font weights */
+    .fw-light {
+        font-weight: var(--fw-light);
+    }
+    .fw-bold {
+        font-weight: var(--fw-bold);
+    }
+
+    .push-end {
+        margin-inline-start: auto;
+    }
+
+    .place-top {
+        place-self: top;
+    }
+
+    .stretch {
+        flex-basis: 100%;
+    }
+
+    .round {
+        border-radius: 100%;
+    }
+}

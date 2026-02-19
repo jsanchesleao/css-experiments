@@ -1,0 +1,41 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SvgFilters from "../components/SvgFilters.astro";
+import MainBanner from "../components/MainBanner.astro";
+
+import avatar from "../assets/avatar.png";
+---
+
+<MainLayout title="CSS Experiments">
+    <div class="container | bg-primary-dark">
+        <MainBanner />
+    </div>
+    <div class="container | bg-secondary-light">
+        <h2 class="text-center padding-md">Who created it?</h2>
+        <section
+            class="personal-section | flex-row flex-wrap justify-center | padding-sm"
+        >
+            <p class="text-alt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                rerum. Molestiae, ullam omnis culpa deleniti laboriosam
+                doloremque animi non expedita minus? Tempore similique qui
+                minima fuga perferendis consectetur beatae quasi commodi
+                nesciunt? Sapiente cum assumenda atque qui voluptate numquam
+                illum.
+            </p>
+            <img class="round" src={avatar.src} alt="avatar" />
+        </section>
+    </div>
+    <SvgFilters />
+</MainLayout>
+
+<style>
+    @layer blocks {
+        img {
+            width: 50%;
+        }
+        .personal-section {
+            width: min(var(--size-xxl), 100vw);
+        }
+    }
+</style>

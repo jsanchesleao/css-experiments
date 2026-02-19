@@ -1,0 +1,83 @@
+---
+import AnchorButton from "./AnchorButton.astro";
+
+import flaskSvg from "../assets/flask.svg";
+---
+
+<section class="padding-inline-sm">
+    <img src={flaskSvg.src} alt="" />
+    <h1>CSS Experiments</h1>
+    <p class="text-lg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, maxime
+        modi, est culpa ipsum repellat atque totam minus exercitationem quae
+        odio. Totam, harum fugiat numquam debitis voluptatibus obcaecati minima
+        reiciendis animi facere. Vel repellat sunt quisquam minus ab amet
+        laudantium aliquam, ea iusto repellendus, repudiandae eos tempore
+        necessitatibus, ducimus incidunt.
+    </p>
+    <div class="cta">
+        <AnchorButton href="/posts/hello">View Articles</AnchorButton>
+    </div>
+</section>
+
+<style>
+    @layer blocks {
+        section {
+            display: grid;
+            grid-template-columns: 1fr;
+            place-items: center;
+            gap: var(--space-sm);
+            padding-block: var(--space-sm);
+        }
+
+        .cta {
+            margin-block: var(--space-sm);
+        }
+
+        img {
+            width: 50%;
+        }
+
+        @media (width > 730px) {
+            section {
+                grid-template-columns: 1fr 2fr;
+            }
+
+            p {
+                grid-column: span 2;
+            }
+
+            .cta {
+                grid-column: span 2;
+                place-self: center;
+            }
+        }
+
+        @media (width > 1100px) {
+            section {
+                grid-template-columns: 1fr 2fr;
+                padding-block-end: var(--space-xl);
+            }
+
+            img {
+                width: 75%;
+                aspect-ratio: 1 / 1;
+                grid-row: span 3;
+            }
+
+            h1 {
+                place-self: center end;
+            }
+
+            p {
+                grid-column: span 1;
+                text-align: end;
+            }
+
+            .cta {
+                grid-column: span 1;
+                place-self: center end;
+            }
+        }
+    }
+</style>

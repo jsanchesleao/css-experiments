@@ -1,0 +1,42 @@
+---
+import logo from "../assets/logo.svg";
+---
+
+<header class="bg-primary-darker padding-inline-sm">
+    <ul class="flex-row">
+        <li>
+            <a href="/"><img src={logo.src} alt="logo" /></a>
+        </li>
+        <li class="push-end">
+            <a class="" href="/">Home</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+    </ul>
+</header>
+
+<style>
+    @layer blocks {
+        header {
+            isolation: isolate;
+            box-shadow: 0 0 5px 5px var(--clr-primary-darker);
+        }
+
+        img {
+            width: var(--size-xs);
+            aspect-ratio: 1 / 1;
+            filter: brightness(5);
+            &:hover {
+                filter: brightness(8);
+            }
+        }
+
+        a {
+            color: var(--clr-neutral-light);
+            &:hover {
+                color: var(--clr-primary-light);
+            }
+        }
+    }
+</style>

@@ -1,0 +1,26 @@
+<svg>
+    <defs>
+        <filter id="filter-thicken">
+            <!-- radius="2" controls the amount of thickening -->
+            <feMorphology
+                operator="dilate"
+                radius="0.45"
+                in="SourceAlpha"
+                result="thickened"></feMorphology>
+            <feMerge>
+                <feMergeNode in="thickened"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+</svg>
+
+<style>
+    @layer blocks {
+        svg {
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+    }
+</style>
