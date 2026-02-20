@@ -6,22 +6,28 @@
 
 @layer base {
     :root {
-        --clr-primary-light: oklch(85% 10% 210deg);
-        --clr-primary: oklch(50% 65% 210deg);
-        --clr-primary-dark: oklch(25% 65% 210deg);
-        --clr-primary-darker: oklch(10% 65% 210deg);
+        --clr-primary-hue: 210deg;
+        --clr-secondary-hue: 77deg;
+        --clr-neutral-hue: 76deg;
+        --clr-accent-hue: 99deg;
 
-        --clr-secondary-light: oklch(90% 5% 77deg);
-        --clr-secondary: oklch(80% 5% 77deg);
-        --clr-secondary-dark: oklch(70% 5% 77deg);
+        --clr-primary-light: oklch(85% 10% var(--clr-primary-hue));
+        --clr-primary: oklch(50% 65% var(--clr-primary-hue));
+        --clr-primary-dark: oklch(25% 65% var(--clr-primary-hue));
+        --clr-primary-darker: oklch(10% 65% var(--clr-primary-hue));
 
-        --clr-neutral-light: oklch(81% 13% 76deg);
-        --clr-neutral: oklch(31% 3% 76deg);
-        --clr-neutral-dark: oklch(21% 3% 76deg);
+        --clr-secondary-light: oklch(90% 5% var(--clr-secondary-hue));
+        --clr-secondary: oklch(80% 5% var(--clr-secondary-hue));
+        --clr-secondary-dark: oklch(70% 5% var(--clr-secondary-hue));
 
-        --clr-accent-light: oklch(74% 34% 281deg);
-        --clr-accent: oklch(54% 54% 281deg);
-        --clr-accent-dark: oklch(34% 34% 281deg);
+        --clr-neutral-light: oklch(81% 13% var(--clr-neutral-hue));
+        --clr-neutral: oklch(31% 3% var(--clr-neutral-hue));
+        --clr-neutral-dark: oklch(21% 3% var(--clr-neutral-hue));
+
+        --clr-accent-light: oklch(74% 34% var(--clr-accent-hue));
+        --clr-accent: oklch(54% 54% var(--clr-accent-hue));
+        --clr-accent-dark: oklch(34% 34% var(--clr-accent-hue));
+        --clr-accent-darker: oklch(10% 34% var(--clr-accent-hue));
 
         --font-main: "Vend Sans", sans-serif;
         --font-alt: "Jef", sans-serif;
@@ -99,6 +105,7 @@
     a,
     p,
     main,
+    section,
     footer {
         margin: 0;
         padding: 0;
