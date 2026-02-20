@@ -1,17 +1,18 @@
 ---
 import logo from "../assets/logo.svg";
+const base = import.meta.env.BASE_URL;
 ---
 
 <header class="bg-primary-darker padding-inline-sm">
     <ul class="flex-row">
         <li>
-            <a href="/"><img src={logo.src} alt="logo" /></a>
+            <a href={base}><img src={logo.src} alt="logo" /></a>
         </li>
         <li class="push-end">
-            <a class="" href="/">Home</a>
+            <a class="" href={base}>Home</a>
         </li>
         <li>
-            <a href="/about">About</a>
+            <a href={`${base}/about`}>About</a>
         </li>
     </ul>
 </header>

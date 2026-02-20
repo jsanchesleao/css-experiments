@@ -2,6 +2,8 @@
 import AnchorButton from "./AnchorButton.astro";
 
 import flaskSvg from "../assets/flask.svg";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="padding-inline-sm">
@@ -16,7 +18,7 @@ import flaskSvg from "../assets/flask.svg";
         necessitatibus, ducimus incidunt.
     </p>
     <div class="cta">
-        <AnchorButton href="/posts/hello">View Articles</AnchorButton>
+        <AnchorButton href={`${base}/posts/hello`}>View Articles</AnchorButton>
     </div>
 </section>
 
