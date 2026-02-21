@@ -2,7 +2,10 @@
 import { Image } from "astro:assets";
 import {Content, frontmatter} from "../content/author.md"
 
-const avatar = (await import(`../../${frontmatter.avatar}`)).default;
+const assets = await import.meta.glob("../assets/**/*.*", { import: 'default'})
+const avatar = assets[`../assets/${frontmatter.avatar}`]()
+console.log(avatar)
+
 ---
 <h2 class="text-center">{frontmatter.title}</h2>
 <section
