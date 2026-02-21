@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import {Content, frontmatter} from "../content/author.md"
+
+const avatar = (await import(`../../${frontmatter.avatar}`)).default;
+---
+<h2 class="text-center">{frontmatter.title}</h2>
+<section
+    class="flex-row flex-wrap justify-center | padding-inline-sm">
+    <div class="text-alt">
+      <Content />
+    </div>
+    <figure>
+      <Image class="round" src={avatar} alt="avatar" />
+    </figure>
+</section>
+
+<style>
+    @layer blocks {
+        h2 {
+          margin-block-start: .75em;
+          margin-block-end: .875em;
+        }
+        img {
+          --size: clamp(200px, 30vw, 350px);
+            margin-block: auto;
+            width: var(--size);
+            height: var(--size);
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+        section {
+            width: min(var(--size-xxl), 100vw);
+            margin-block-end: var(--space-sm);
+        }
+    }
+</style>

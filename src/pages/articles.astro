@@ -1,0 +1,35 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PostPreview from "../components/PostPreview.astro";
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+const posts = await getCollection('posts')
+---
+<MainLayout title="CSS Experiments - Articles">
+
+<div class="container">
+  <h1> Articles </h1>
+  <ul>
+    {posts.map(post => (
+    <li>
+      <PostPreview 
+        title={post.data.title}
+        description={post.data.description}
+        published={post.data.published}
+        url={`${base}/posts/${post.id}`} />
+    </li>
+    ))
+  </ul>
+</div>
+
+</MainLayout>
+
+<style>
+   ul {
+     display: flex;
+     flex-direction: column;
+     gap: var(--space-sm);
+     width: clamp(20rem, 50vw, 50rem)
+   }
+</style>

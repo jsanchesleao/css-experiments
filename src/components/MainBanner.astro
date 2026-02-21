@@ -2,23 +2,19 @@
 import AnchorButton from "./AnchorButton.astro";
 
 import flaskSvg from "../assets/flask.svg";
+import { Content, frontmatter} from "../content/main_banner.md";
 
 const base = import.meta.env.BASE_URL;
 ---
 
 <section class="padding-inline-sm">
     <img src={flaskSvg.src} alt="" />
-    <h1>CSS Experiments</h1>
-    <p class="text-lg">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, maxime
-        modi, est culpa ipsum repellat atque totam minus exercitationem quae
-        odio. Totam, harum fugiat numquam debitis voluptatibus obcaecati minima
-        reiciendis animi facere. Vel repellat sunt quisquam minus ab amet
-        laudantium aliquam, ea iusto repellendus, repudiandae eos tempore
-        necessitatibus, ducimus incidunt.
-    </p>
+    <h1> {frontmatter.title} </h1>
+    <div class="content-wrapper | text-lg">
+      <Content />
+    </div>
     <div class="cta">
-        <AnchorButton href={`${base}/posts/hello`}>View Articles</AnchorButton>
+      <AnchorButton href={`${base}/articles`}>{frontmatter.cta}</AnchorButton>
     </div>
 </section>
 
@@ -45,7 +41,7 @@ const base = import.meta.env.BASE_URL;
                 grid-template-columns: 1fr 2fr;
             }
 
-            p {
+            .content-wrapper {
                 grid-column: span 2;
             }
 
@@ -71,7 +67,7 @@ const base = import.meta.env.BASE_URL;
                 place-self: center end;
             }
 
-            p {
+            .content-wrapper {
                 grid-column: span 1;
                 text-align: end;
             }

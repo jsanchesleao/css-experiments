@@ -5,14 +5,15 @@ const base = import.meta.env.BASE_URL;
 
 <header class="bg-primary-darker padding-inline-sm">
     <ul class="flex-row">
-        <li>
+        <li class="logo-wrapper">
             <a href={base}><img src={logo.src} alt="logo" /></a>
+            <p> CSS Experiments </p>
         </li>
         <li class="push-end">
             <a class="" href={base}>Home</a>
         </li>
         <li>
-            <a href={`${base}/about`}>About</a>
+            <a href={`${base}/articles`}>Articles</a>
         </li>
     </ul>
 </header>
@@ -31,6 +32,13 @@ const base = import.meta.env.BASE_URL;
             &:hover {
                 filter: brightness(8);
             }
+
+            /* update the logo svg so I can remove this magic numbering */
+            position: relative;
+            top: 5px;
+            @media(width > 548px) {
+              top: 8px;
+            }
         }
 
         a {
@@ -38,6 +46,21 @@ const base = import.meta.env.BASE_URL;
             &:hover {
                 color: var(--clr-primary-light);
             }
+        }
+
+        .logo-wrapper p {
+          display: none;
+        }
+
+        @media(width > 548px) {
+          .logo-wrapper p {
+            display: block;
+          }
+          .logo-wrapper {
+            display: flex;
+            align-items: center;
+            font-size: var(--font-size-xl);
+          }
         }
     }
 </style>

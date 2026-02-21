@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: Hello Experiments
+title: How to create new posts with longer titles
 published: 20.02.2026
-description: Lorem ipsum sit dolor amet
+description: Lorem ipsum sit dolor amet and even longer descriptions
 ---
 # Hello CSS Experiments
 

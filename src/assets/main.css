@@ -48,6 +48,7 @@
         --space-sm: 1.5rem;
         --space-xs: 1rem;
         --space-xxs: 0.5rem;
+        --space-xxxs: 0.25rem;
 
         --size-xs: 4rem;
         --size-sm: 6rem;
@@ -139,6 +140,8 @@
     }
 
     .container {
+      display: grid;
+      gap: var(--gap, 1rem);
         > * {
             max-width: min(1210px, 100vw);
             margin-inline: auto;
@@ -218,7 +221,7 @@
     }
     .text-alt {
         font-family: var(--font-alt);
-        filter: url(#filter-thicken);
+        filter: contrast(10);
     }
 
     /* font sizes */
