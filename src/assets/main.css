@@ -140,8 +140,8 @@
     }
 
     .container {
-      display: grid;
-      gap: var(--gap, 1rem);
+        display: grid;
+        gap: var(--gap, 1rem);
         > * {
             max-width: min(1210px, 100vw);
             margin-inline: auto;
@@ -150,7 +150,7 @@
 
     .container-small {
         > * {
-            max-width: 980px;
+            max-width: min(980px, 75vw);
             margin-inline: auto;
         }
     }
