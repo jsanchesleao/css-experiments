@@ -9,7 +9,7 @@
         --clr-primary-hue: 210deg;
         --clr-secondary-hue: 77deg;
         --clr-neutral-hue: 76deg;
-        --clr-accent-hue: 99deg;
+        --clr-accent-hue: 140deg;
 
         --clr-primary-light: oklch(85% 10% var(--clr-primary-hue));
         --clr-primary: oklch(50% 65% var(--clr-primary-hue));
@@ -30,6 +30,7 @@
         --clr-accent-darker: oklch(10% 34% var(--clr-accent-hue));
 
         --font-main: "Vend Sans", sans-serif;
+        --font-fancy: "Grape Nuts", cursive;
         --font-alt: "Jef", sans-serif;
         --fw-light: 300;
         --fw-normal: 400;
@@ -212,6 +213,18 @@
     .text-neutral-dark {
         color: var(--clr-neutral-dark);
     }
+    .text-primary-light {
+        color: var(--clr-primary-light);
+    }
+    .text-primary {
+        color: var(--clr-primary);
+    }
+    .text-primary-dark {
+        color: var(--clr-primary-dark);
+    }
+    .text-primary-darker {
+        color: var(--clr-primary-darker);
+    }
 
     .text-center {
         text-align: center;
@@ -222,6 +235,10 @@
     .text-alt {
         font-family: var(--font-alt);
         filter: contrast(10);
+    }
+    .text-fancy {
+        font-family: var(--font-fancy);
+        font-size-adjust: ch-width 0.8;
     }
 
     /* font sizes */

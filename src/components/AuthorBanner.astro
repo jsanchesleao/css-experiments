@@ -1,31 +1,32 @@
 ---
 import { Image } from "astro:assets";
-import {Content, frontmatter} from "../content/author.md"
+import { Content, frontmatter } from "../content/author.md";
 
-const assets = await import.meta.glob("../assets/**/*.*", { import: 'default'})
-const avatar = assets[`../assets/${frontmatter.avatar}`]()
-console.log(avatar)
-
+const assets = import.meta.glob("../assets/**/*.*", {
+    import: "default",
+});
+const avatar = assets[`../assets/${frontmatter.avatar}`]();
+console.log(avatar);
 ---
+
 <h2 class="text-center">{frontmatter.title}</h2>
-<section
-    class="flex-row flex-wrap justify-center | padding-inline-sm">
-    <div class="text-alt">
-      <Content />
+<section class="flex-row flex-wrap justify-center | padding-inline-sm">
+    <div class="text-fancy">
+        <Content />
     </div>
     <figure>
-      <Image class="round" src={avatar} alt="avatar" />
+        <Image class="round" src={avatar} alt="avatar" />
     </figure>
 </section>
 
 <style>
     @layer blocks {
         h2 {
-          margin-block-start: .75em;
-          margin-block-end: .875em;
+            margin-block-start: 0.75em;
+            margin-block-end: 0.875em;
         }
         img {
-          --size: clamp(200px, 30vw, 350px);
+            --size: clamp(200px, 30vw, 350px);
             margin-block: auto;
             width: var(--size);
             height: var(--size);

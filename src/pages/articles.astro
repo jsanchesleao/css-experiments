@@ -8,8 +8,8 @@ const posts = await getCollection("posts");
 ---
 
 <MainLayout title="CSS Experiments - Articles">
-    <div class="container">
-        <h1 class="text-neutral">Articles</h1>
+    <div class="container | padding-block-sm">
+        <h1 class="text-primary-darker">Articles</h1>
         <ul>
             {
                 posts.map((post) => (
@@ -32,7 +32,7 @@ const posts = await getCollection("posts");
                 display: flex;
                 flex-direction: column;
                 gap: var(--space-sm);
-                width: clamp(20rem, 50vw, 50rem);
+                max-width: clamp(20rem, 50vw, 50rem);
                 margin-block-end: var(--space-sm);
             }
         }

@@ -2,19 +2,19 @@
 import AnchorButton from "./AnchorButton.astro";
 
 import flaskSvg from "../assets/flask.svg";
-import { Content, frontmatter} from "../content/main_banner.md";
+import { Content, frontmatter } from "../content/main_banner.md";
 
 const base = import.meta.env.BASE_URL;
 ---
 
 <section class="padding-inline-sm">
     <img src={flaskSvg.src} alt="" />
-    <h1> {frontmatter.title} </h1>
+    <h1 class="text-fancy">{frontmatter.title}</h1>
     <div class="content-wrapper | text-lg">
-      <Content />
+        <Content />
     </div>
     <div class="cta">
-      <AnchorButton href={`${base}/articles`}>{frontmatter.cta}</AnchorButton>
+        <AnchorButton href={`${base}/articles`}>{frontmatter.cta}</AnchorButton>
     </div>
 </section>
 
@@ -34,6 +34,10 @@ const base = import.meta.env.BASE_URL;
 
         img {
             width: 50%;
+        }
+
+        h1 {
+            text-align: center;
         }
 
         @media (width > 730px) {

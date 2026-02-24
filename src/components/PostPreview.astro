@@ -1,46 +1,57 @@
 ---
 const { url, published, title, description } = Astro.props;
 ---
+
 <a href={url}>
-  <div>
-    <h2> {title} </h2>
-    <p class="publishing-date"> { published } </p>
-    <p> { description } </p>
-  </div>
+    <div>
+        <h2 class="text-primary-dark text-fancy">{title}</h2>
+        <p class="publishing-date | text-neutral">{published}</p>
+        <p class="text-primary-darker">{description}</p>
+    </div>
 </a>
 
 <style>
-  @layer blocks {
-    * {
-      --outline: 1px solid purple;
-    }
-    div {
-      padding: var(--space-xs) var(--space-sm);
-      border: 1px solid var(--clr-secondary);
-      border-radius: var(--space-xs) var(--space-xs) 0 var(--space-xs);
-      corner-shape: squircle;
-      display: grid;
-    }
+    @layer blocks {
+        * {
+            --outline: 1px solid purple;
+        }
+        div {
+            padding: var(--space-xs) var(--space-sm);
+            border: 1px solid var(--clr-secondary);
+            border-radius: var(--space-xs) var(--space-xs) 0 var(--space-xs);
+            corner-shape: squircle;
+            display: grid;
+        }
 
-    h2 {
-      line-height: 1.2;
+        h2 {
+            line-height: 1.2;
+            width: fit-content;
+            border-bottom: 1px solid var(--clr-secondary-dark);
+            padding-bottom: var(--space-sm);
+            margin-inline: auto;
+            text-wrap: pretty;
+            text-align: center;
+        }
+
+        p {
+            color: var(--clr-neutral);
+            width: fit-content;
+        }
+
+        .publishing-date {
+            width: fit-content;
+            margin-inline: auto;
+            position: relative;
+            bottom: calc(var(--space-sm));
+        }
+
+        a {
+            text-decoration: none;
+
+            &:hover div {
+                background-color: var(--clr-secondary);
+                border-color: var(--clr-secondary-dark);
+            }
+        }
     }
-
-    .publishing-date {
-      margin-block-end: var(--space-xxxs);
-    }
-
-    a {
-      text-decoration: none;
-
-      &:hover h2 {
-        text-decoration: underline;
-      }
-
-      &:hover div {
-        background-color: var(--clr-secondary);
-        border-color: var(--clr-secondary-dark);
-      }
-    }
-  }
 </style>
