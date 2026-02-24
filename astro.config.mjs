@@ -5,4 +5,9 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://jsanchesleao.github.io",
   base: "/css-experiments",
+  markdown: {
+    shikiConfig: {
+      theme: "gruvbox-dark-medium",
+    },
+  },
 });
